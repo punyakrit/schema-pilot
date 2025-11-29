@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Schema Pilot
 
-## Getting Started
+**Schema Pilot** is a visual database design tool built for modern developers. It allows you to design your database schema visually and instantly generate Prisma schemas and SQL code.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Visual Database Modeling**: Intuitively design your database tables and relationships using a drag-and-drop interface (powered by React Flow).
+- **Instant Code Generation**: Automatically generate `schema.prisma` and SQL code as you design.
+- **Modern UI**: Built with a clean, accessible interface using Shadcn UI and Tailwind CSS.
+- **Dark Mode Support**: Fully optimized for both light and dark themes.
+- **Developer Focused**: Designed to integrate seamlessly into your development workflow.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **UI Components**: [Radix UI](https://www.radix-ui.com/) & [Lucide Icons](https://lucide.dev/)
+- **Diagramming**: [React Flow (@xyflow/react)](https://reactflow.dev/)
+- **Forms**: React Hook Form + Zod
+- **Database Tooling**: [Prisma](https://www.prisma.io/)
 
-## Learn More
+## 📦 Getting Started
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js (v18+ recommended)
+- npm, yarn, pnpm, or bun
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Installation
 
-## Deploy on Vercel
+1. **Clone the repository:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   git clone https://github.com/punyakrit/schema-pilot
+   cd schema-pilot
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
+
+3. **Run the development server:**
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
+
+4. **Open the app:**
+   Navigate to [http://localhost:3000](http://localhost:3000) in your browser.
+
+
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License.

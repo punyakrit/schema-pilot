@@ -1,50 +1,50 @@
 'use client'
 import { Button } from '@/components/ui/button'
-import { ArrowRightIcon, Database, Github, XIcon } from 'lucide-react'
+import { ArrowRightIcon, Database, Github, TwitterIcon } from 'lucide-react'
 import Link from 'next/link'
 
 function Navbar() {
   return (
-    <nav className='fixed top-3 sm:top-5 left-0 right-0 z-50 container mx-auto px-4'>
-      <div className='border rounded-full h-14 sm:h-16 border-green-500/80 bg-background/80 backdrop-blur-sm shadow-lg'>
-        <div className='flex items-center justify-between h-full px-4 sm:px-6 lg:px-8'>
-          <Link href='/' className='flex items-center hover:opacity-80 transition-opacity'>
-            <Database className='size-6 sm:size-8 text-green-500' />
-          </Link>
-          
-          <div className='flex items-center gap-2 sm:gap-4'>
-            <div className='flex items-center gap-2 sm:gap-3'>
-              <Link 
-                href='https://github.com/punyakrit/schema-pilot'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='p-1.5 sm:p-2 rounded-full hover:bg-muted transition-colors'
-                aria-label='GitHub'
-              >
-                <Github className='size-4 sm:size-5 text-muted-foreground hover:text-foreground transition-colors' />
-              </Link>
-              <Link 
-                href='https://x.com/punyakrit_22'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='p-1.5 sm:p-2 rounded-full hover:bg-muted transition-colors'
-                aria-label='Twitter'
-              >
-                <XIcon className='size-4 sm:size-5 text-muted-foreground hover:text-foreground transition-colors' />
-              </Link>
-            </div>
-            
-            <Link href='/main'>
-              <Button 
-                variant='default' 
-                className='rounded-full gap-1.5 sm:gap-2 bg-green-500 hover:bg-green-600 text-white text-xs sm:text-sm px-3 sm:px-4 h-8 sm:h-9'
-              >
-                <span className="hidden sm:inline">Get started</span>
-                <span className="sm:hidden">Start</span>
-                <ArrowRightIcon className='size-3 sm:size-4' />
-              </Button>
+    <nav className='fixed top-0 left-0 right-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-md'>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between'>
+        <Link href='/' className='flex items-center gap-2 hover:opacity-80 transition-opacity'>
+          <div className="size-8 bg-primary text-primary-foreground flex items-center justify-center rounded-lg">
+            <Database className='size-5' />
+          </div>
+          <span className="font-bold text-lg tracking-tight">Schema Pilot</span>
+        </Link>
+        
+        <div className='flex items-center gap-4'>
+          <div className=' items-center gap-2 hidden sm:flex'>
+            <Link 
+              href='https://github.com/punyakrit/schema-pilot'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='p-2 rounded-md hover:bg-accent hover:text-accent-foreground transition-colors'
+              aria-label='GitHub'
+            >
+              <Github className='size-5' />
+            </Link>
+            <Link 
+              href='https://x.com/punyakrit_22'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='p-2 rounded-md hover:bg-accent hover:text-accent-foreground transition-colors'
+              aria-label='Twitter'
+            >
+              <TwitterIcon className='size-5' />
             </Link>
           </div>
+          
+          <Link href='/main'>
+            <Button 
+              size="sm"
+              className='rounded-md gap-2 font-medium'
+            >
+              Start Designing
+              <ArrowRightIcon className='size-4' />
+            </Button>
+          </Link>
         </div>
       </div>
     </nav>

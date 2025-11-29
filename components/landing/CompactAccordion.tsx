@@ -1,7 +1,6 @@
 "use client"
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Separator } from "@/components/ui/separator"
 
 const ACCORDION_ITEMS = [
   {
@@ -26,46 +25,44 @@ const ACCORDION_ITEMS = [
     id: "migrations",
     title: "Does it handle migrations for existing DBs?",
     body:
-      "The visual designer emits fresh DDL and Prisma schema. For existing databases, we recommend using Prisma Migrate or an automated backend step to generate safe migration scripts — the UI will show changed lines so you can review before applying.",
+      "The visual designer emits fresh DDL and Prisma schema. For existing databases, we recommend using Prisma Migrate or an automated backend step to generate safe migration scripts.",
   },
   {
     id: "privacy",
     title: "Where are my credentials stored?",
     body:
-      "Never store raw DB credentials in the frontend. Exports will use `env(\"DATABASE_URL\")` placeholders. If you enable server-side generation, credentials must be stored securely on your backend (not the browser).",
+      "Never store raw DB credentials in the frontend. Exports will use `env(\"DATABASE_URL\")` placeholders. If you enable server-side generation, credentials must be stored securely on your backend.",
   },
 ]
 
-export default function CompactAccordion({ className = "" }: { className?: string }) {
+export default function CompactAccordion() {
   return (
-    <section
-      aria-label="FAQ"
-      className={`container mx-auto px-4 sm:px-6 lg:px-10 pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24 ${className}`}
-    >
+    <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <div className="max-w-3xl mx-auto">
-        <div className="space-y-3 mb-10 sm:mb-12 text-center px-4">
-          <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold">Frequently Asked Questions
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold tracking-tight mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            Common questions about Schema Pilot and how it works.
           </p>
         </div>
 
-        <div className="bg-white/5 rounded-lg backdrop-blur-sm border border-green-500/20">
-          <Accordion type="single" collapsible className="w-full">
-            {ACCORDION_ITEMS.map((item, index) => (
-              <div key={item.id}>
-                <AccordionItem value={item.id} className="border-none">
-                  <AccordionTrigger className="px-5 sm:px-6 lg:px-8 py-5 sm:py-6 hover:no-underline hover:bg-green-500/10 focus-visible:ring-green-500/50 focus-visible:ring-2 [&[data-state=open]]:bg-green-500/10 transition-colors [&>svg]:text-green-500">
-                    <span className="font-medium text-white/90 text-sm sm:text-base pr-4 text-left">
-                      {item.title}
-                    </span>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-5 sm:px-6 lg:px-8 pb-5 sm:pb-6 text-sm sm:text-base text-white/70 leading-relaxed">
-                    {item.body}
-                  </AccordionContent>
-                </AccordionItem>
-                {index < ACCORDION_ITEMS.length - 1 && (
-                  <Separator className="bg-green-500/20" />
-                )}
-              </div>
+        <div className="w-full">
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            {ACCORDION_ITEMS.map((item) => (
+              <AccordionItem 
+                key={item.id} 
+                value={item.id} 
+                className="border border-border rounded-lg px-4 bg-card"
+              >
+                <AccordionTrigger className="hover:no-underline py-4 text-base font-medium">
+                  {item.title}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground pb-4 leading-relaxed">
+                  {item.body}
+                </AccordionContent>
+              </AccordionItem>
             ))}
           </Accordion>
         </div>
@@ -73,4 +70,3 @@ export default function CompactAccordion({ className = "" }: { className?: strin
     </section>
   )
 }
-

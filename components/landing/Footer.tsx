@@ -1,19 +1,43 @@
 import React from 'react'
-import { Separator } from '@/components/ui/separator'
+import Link from 'next/link'
+import { Github, Twitter } from 'lucide-react'
 
 function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="mt-16 sm:mt-20 lg:mt-24">
-      <Separator className="bg-white/10" />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-10 py-10 sm:py-12 lg:py-16">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center">
-            <p className="text-white/60 text-xs sm:text-sm">
-              © {currentYear} Schema Pilot. Built for developers who love clean code.
+    <footer className="border-t border-border/40 bg-muted/10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col items-center md:items-start gap-2">
+            <span className="font-bold text-lg">Schema Pilot</span>
+            <p className="text-sm text-muted-foreground">
+              Visual database design for modern developers.
             </p>
           </div>
+          
+          <div className="flex items-center gap-6">
+             <Link 
+              href="https://github.com/punyakrit/schema-pilot" 
+              target="_blank"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Github className="size-5" />
+            </Link>
+            <Link 
+              href="https://x.com/punyakrit_22" 
+              target="_blank"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Twitter className="size-5" />
+            </Link>
+          </div>
+        </div>
+        
+        <div className="mt-12 pt-8 border-t border-border/40 text-center md:text-left">
+          <p className="text-sm text-muted-foreground">
+            © {currentYear} Schema Pilot. Open source under MIT License.
+          </p>
         </div>
       </div>
     </footer>
@@ -21,4 +45,3 @@ function Footer() {
 }
 
 export default Footer
-

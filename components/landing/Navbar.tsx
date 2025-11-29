@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 function Navbar() {
   return (
-    <div className='fixed top-5 left-0 right-0 z-50 container mx-auto px-4'>
+    <nav className='fixed top-5 left-0 right-0 z-50 container mx-auto px-4'>
       <div className='border rounded-full h-16 border-green-500/80 bg-background/80 backdrop-blur-sm shadow-lg'>
         <div className='flex items-center justify-between h-full px-8'>
           <Link href='/' className='flex items-center hover:opacity-80 transition-opacity'>
@@ -24,7 +24,7 @@ function Navbar() {
                 <Github className='size-5 text-muted-foreground hover:text-foreground transition-colors' />
               </Link>
               <Link 
-                href='https://x.com/punyakrit'
+                href='https://x.com/punyakrit_22'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='p-2 rounded-full hover:bg-muted transition-colors'
@@ -46,7 +46,7 @@ function Navbar() {
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   )
 }
 
